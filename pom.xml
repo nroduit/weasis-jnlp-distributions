@@ -55,8 +55,8 @@
 						<manifestEntries>
 							<Implementation-Title>${project.name}</Implementation-Title>
 							<Implementation-Version>${project.version}</Implementation-Version>
-							<Source-Distribution>Weasis Distribution</Source-Distribution>
-							<Source-Distribution-Version>${weasis.distribution.version}</Source-Distribution-Version>
+							<Overlay-Title>Weasis Distribution</Overlay-Title>
+							<Overlay-Version>${weasis.distribution.version}</Overlay-Version>
 						</manifestEntries>
 					</archive>
 
@@ -73,5 +73,12 @@
 		</plugins>
 
 	</build>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+	</repositories>
 
 </project>
