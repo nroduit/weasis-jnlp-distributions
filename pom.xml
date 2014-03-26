@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.weasis</groupId>
+	<artifactId>weasis-jnlp-distribution</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>Weasis Jnlp Distribution</name>
+
+	<description>Web-application to launch Weasis with jnlp template </description>
+
+	<prerequisites>
+		<maven>2.2.1</maven>
+	</prerequisites>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<weasis.distribution.version>2.0.0-beta</weasis.distribution.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.weasis</groupId>
+			<artifactId>weasis-distributions</artifactId>
+			<version>${weasis.distribution.version}</version>
+			<type>war</type>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>webstart-jnlp-servlet</artifactId>
+			<version>1.0-beta-6</version>
+			<scope>runtime</scope>
+			<!-- @see http://mojo.codehaus.org/webstart/webstart-jnlp-servlet/project-info.html -->
+		</dependency>
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+
+				<configuration>
+					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+
+						<manifestEntries>
+							<Implementation-Title>${project.name}</Implementation-Title>
+							<Implementation-Version>${project.version}</Implementation-Version>
+							<Source-Distribution>Weasis Distribution</Source-Distribution>
+							<Source-Distribution-Version>${weasis.distribution.version}</Source-Distribution-Version>
+						</manifestEntries>
+					</archive>
+
+					<overlays>
+						<overlay>
+							<groupId>org.weasis</groupId>
+							<artifactId>weasis-distributions</artifactId>
+							<type>war</type>
+						</overlay>
+					</overlays>
+
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>
