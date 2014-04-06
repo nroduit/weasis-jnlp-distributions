@@ -16,8 +16,8 @@
 	</prerequisites>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<weasis.distribution.version>2.0.0-beta</weasis.distribution.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
