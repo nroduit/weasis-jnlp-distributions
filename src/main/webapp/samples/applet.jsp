@@ -6,11 +6,11 @@
 
 	var attributes = {
     	width:'100%',
-    	height:'100%',
+    	height:'100%'
 	};
 	var parameters = {
 		jnlp_href : 'applet.jnlp',
-		commands : '${param.commands}',
+		commands : '${param.commands}'
 	};
 
 	var version = '1.6';
