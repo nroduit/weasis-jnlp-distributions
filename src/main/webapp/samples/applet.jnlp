@@ -14,12 +14,6 @@
 
 		<icon href="images/logo-button.png" kind="default" />
 		<icon href="images/about.png" kind="splash" />
-
-		<shortcut online="false">
-			<desktop />
-			<menu submenu="Weasis" />
-		</shortcut>
-
 	</information>
 
 	<security>
@@ -34,9 +28,15 @@
 		<!-- Allows to get the file in pack200 compression -->
 		<property name="jnlp.packEnabled" value="true" />
 
+		<!-- Add prefix "jnlp.weasis" for having a fully trusted application without signing jnlp (only 
+			since weasis 2.0.0), http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6653241 -->
+		<!-- Required parameter. Define the location of config.properties (the OSGI configuration and the list of plug-ins to install/start) -->
 		<property name="jnlp.weasis.felix.config.properties" value="$$context/conf/config.properties" />
+		<!-- Optional parameter. Define the location of ext-config.properties (extend/override config.properties) -->
 		<property name="jnlp.weasis.felix.extended.config.properties" value="$$context/conf/ext-config.properties" />
+		<!-- Required parameter. Define the code base of Weasis for the JNLP -->
 		<property name="jnlp.weasis.weasis.codebase.url" value="$$context" />
+		<!-- Required parameter. OSGI console parameter -->
 		<property name="jnlp.weasis.gosh.args" value="--nointeractive" />
 
 		<jar href="$$context/weasis-launcher.jar" main="true" />
