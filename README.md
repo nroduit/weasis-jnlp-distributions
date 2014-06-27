@@ -9,5 +9,7 @@ This project is an example on how to override the default package **weasis.war**
  * Rebuild the .war file: `mvn clean package`
  * The new distribution file is located in target/web_dist/weasis.war
  * Deploy it and then go to the default page (ex. http://localhost:8080/weasis)
+
+[See on demo server](http://dicom.vital-it.ch:8089/weasis/)
  
 ![Weasis inside a web browser](Screenshot.png)
